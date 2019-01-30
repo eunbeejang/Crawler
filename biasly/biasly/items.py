@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
 
 
 class BiaslyItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+
+    title = scrapy.Field()		# Article name
+    body = scrapy.Field()		# Article body
+    url = scrapy.Field()		# Article url
+
     pass
+
+# https://www.youtube.com/watch?v=M_vUt-oe1U8
+# https://www.youtube.com/watch?v=ivS3FzAL9ss

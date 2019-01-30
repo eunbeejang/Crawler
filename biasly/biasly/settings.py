@@ -1,14 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for biasly project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     https://doc.scrapy.org/en/latest/topics/settings.html
-#     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-
 BOT_NAME = 'biasly'
 
 SPIDER_MODULES = ['biasly.spiders']
@@ -19,8 +10,8 @@ NEWSPIDER_MODULE = 'biasly.spiders'
 #USER_AGENT = 'biasly (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
-
+ROBOTSTXT_OBEY = False
+FEED_EXPORT_ENCODING = 'utf-8'
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -64,9 +55,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'biasly.pipelines.BiaslyPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'biasly.pipelines.BiaslyPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

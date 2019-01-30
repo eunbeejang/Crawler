@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-
+import csv
 
 class BiaslyPipeline(object):
-    def process_item(self, item, spider):
-        return item
+
+	def __init__(self):
+		self.csvwriter = csv.writer(open("cosmopolitan_new.csv", "w"))
+		self.csvwriter.writerow(["title", "body", "url"])
+
+	def process_item(self, item, spider):
+		row = []
+		row.append(item["title"])
+		row.append(item["body"])
+		row.append(item["url"])
+		self.csvwriter.writerow(row)
+		return item
