@@ -1,2 +1,4 @@
 # Crawler
-WebCrawler (Scrapy) 
+Scrapy Web Crawler
+
+- Code includes an example crawling of Cosmopolitan website
